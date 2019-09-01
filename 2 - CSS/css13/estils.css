@@ -1,0 +1,26 @@
+#d1
+{
+
+    position: absolute;
+    width: 100px;
+    height: 100px;
+
+    /* transform: rotate(-45deg); 
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg); */
+
+    /* transform: scaleX(0.5); */
+    /* transform: scale(2,2); */
+    /* transform: translate(50px,20px); */
+    /*transform: skewX(20deg); */
+    /* transform: matrix(1, 2, -1, 1, 80, 80); */
+    transform: rotateX(20deg);
+
+}
+
+#t1
+{
+
+    transform: rotateX(20deg);
+
+}

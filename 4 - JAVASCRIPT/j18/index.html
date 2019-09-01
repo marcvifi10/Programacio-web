@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>18</title>
+    </head>
+    <body>
+        <script>
+            /*var cotxe = {
+                marca: "seat",
+                model: "ibiza"
+            };*/
+
+            //Constructor Objecte
+            function Cotxe(marcaCotxe, modelCotxe, potenciaCotxe) {
+                this.marca = marcaCotxe;
+                this.model = modelCotxe;
+                this.potencia = potenciaCotxe;
+            }
+
+            //Declaració Objecte
+            var vehicleEmpresa = new Cotxe('Seat', 'Ibiza', '90cv');
+
+            //Mostra Objecte
+            console.log(vehicleEmpresa.marca, vehicleEmpresa.model, vehicleEmpresa.potencia);
+
+            // console.log(cotxe.marca, cotxe.model);
+            // console.log(cotxe["marca"]);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="button" value="Apretam" onclick="saludar();">
+        <script>
+
+            function saludar() 
+            {
+                //variables
+                var d = new Date();
+                var h = d.getHours();
+                var m = d.getMonth();
+
+                if(m < 4) 
+                {
+                    alert('hivern');
+                } 
+                else if(m < 6) 
+                {
+                    alert('primavera');
+                } 
+                else if(m < 8) 
+                {
+                    alert('tardor');
+                } 
+                else if(m < 11) 
+                {
+                    alert('hivern');
+                }
+
+                //controls
+                if ((h <= 12) && (h > 4)) 
+                {
+                    alert('Bon dia'); 
+                } 
+                else if ((h > 14) && (h < 21))
+                {
+                    alert('Bona tarda');
+                } 
+                else if ((h >= 21) && (h <= 4)) 
+                {
+                    alert('Bona nit');
+                }
+            }
+            
+        </script>
+    </body>
+</html>

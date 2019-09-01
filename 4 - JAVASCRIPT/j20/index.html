@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>20</title>
+    </head>
+    <body>
+        <form action="" name="form1">
+            <label for="nom">Nom:</label>
+            <input type="text" name="nom">
+            
+            <label for="nom2">Nom2:</label>
+            <input type="text" name="nom2">
+            <br>
+            <input type="button" value="Envia" onclick="saludar();">
+        </form>
+        <script>
+
+            function saludar() 
+            {
+                var nom = document.forms["form1"]["nom"].value;
+                document.forms["form1"]["nom2"].value = nom;
+                alert(nom);
+            }
+            
+        </script>
+    </body>
+</html>

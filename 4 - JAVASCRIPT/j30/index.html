@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>30</title>
+    </head>
+    <body>
+        <h1>Taules de multiplicar:</h1>
+        <label for="numero">Posa un número: </label>
+        <input type="text" name="numero" id="num">
+        <input type="button" value="Mostra" onclick="mostrarNumero();">
+        <br>
+        <div id="resultat"></div>
+        <script>
+            
+            function mostrarNumero() 
+            {
+                var numero = document.getElementById('num').value;
+                var resultat = document.getElementById('resultat');
+                var codi = "";
+                codi += "<h2> Taula de multiplicar del " + numero + "</h2>";
+                codi  += "<table border=1 width=400px>";
+
+                for (var i = 0; i <= 10; i++) 
+                {
+                    codi += "<tr>";
+                        codi += "<td>" + numero + "</td>";
+                        codi += "<td>" + i + "</td>";
+                        codi += "<td>" + (i * numero) + "</td>";
+                    codi +="</tr>";
+                }
+                
+                codi += "</table>";
+                resultat.innerHTML = codi;
+
+            }
+        </script>
+    </body>
+</html>

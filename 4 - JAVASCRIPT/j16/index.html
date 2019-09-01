@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>16</title>
+    </head>
+    <body>
+        <input type="text" id="cuadro"> 
+        <input type="button" value="Clica!!!" onclick="mostrar()">
+        <script>
+        
+            function mostrar()
+            {
+
+                var t = document.getElementById("cuadro").value;
+
+                alert(t);
+                alert(t.length);
+
+                // Mira si hi ha una arroba a partir del caràcter 3
+                alert(t.indexOf("@",3));
+
+                // Comença mirant per l'últim element fins el primer
+                alert(t.lastIndexOf("-"));
+
+                // Extreu del caràcter x fins el y
+                alert(t.slice(7,12));
+
+                // Extreu els caràcter començant fins x amb n caràcters, no posem FI!!!!
+                alert(t.substr(2,5));
+
+            }
+
+        </script>
+    </body>
+</html>

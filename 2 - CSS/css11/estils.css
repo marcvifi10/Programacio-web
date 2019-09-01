@@ -1,0 +1,39 @@
+h1
+{
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+p
+{
+
+    border: 1px solid black;
+    width: 500px;
+    height: 100px;
+    overflow-x: auto;
+    overflow-y: scroll;
+    align-content: justify;
+    /* font-family: 'Lato', sans-serif; */
+    
+    -webkit-box-shadow: 10px 10px 5px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 5px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 5px rgba(0,0,0,0.75);
+
+}
+
+@font-face 
+{
+
+    font-family: "Atomic";
+    src: url("AtomicSushi.ttf");
+
+}
+  
+p 
+{
+
+    font-family: "Atomic", cursive;
+    font-size: 150%;
+
+}

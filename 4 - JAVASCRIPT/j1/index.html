@@ -1,0 +1,52 @@
+<html> 
+    <head> 
+        <title>rellotge con Javascript</title> 
+        <meta charset="utf8">
+        <link rel="stylesheet" type="text/css" href="estils.css">
+        <script language="JavaScript"> 
+
+            function MouRellotge()
+            { 
+
+                avui = new Date();
+                hora = avui.getHours(); 
+                minut = avui.getMinutes(); 
+                segon = avui.getSeconds(); 
+
+                str_segon = new String (segon) 
+                if (str_segon.length == 1)
+                { 
+                    segon = "0" + segon;
+                } 
+
+                str_minut = new String (minut) 
+                if (str_minut.length == 1) 
+                {
+                    minut = "0" + minut; 
+                }
+
+                str_hora = new String (hora) 
+                if (str_hora.length == 1) 
+                {
+                    hora = "0" + hora; 
+                }
+
+                horaImprimible = hora + " : " + minut + " : " + segon;
+
+                document.form_rellotge.rellotge.value = horaImprimible;
+
+                setTimeout("MouRellotge()",1000); 
+                
+            } 
+
+        </script> 
+    </head> 
+    <body onload="MouRellotge()"> 
+
+        Vemos aquí el rellotge funcionando... 
+
+        <form name="form_rellotge"> 
+            <input type="text" name="rellotge" size="10" style="background-color : Black; color : White; font-family : Verdana, Arial, Helvetica; font-size : 8pt; text-align : center;" onfocus="window.document.form_rellotge.rellotge.blur()"> 
+        </form> 
+    </body> 
+</html> 

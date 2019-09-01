@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Exercici (Factorials, Fibonacci, Numeros Primers):</h1>
+        <input type="text" id="numero">
+        <input type="button" value="Calcula Factorial" onclick="calculaFactorial();">
+        <input type="button" value="Calcula Fibonacci" onclick="calculaFibonacci();">
+        <input type="button" value="Calcula Primers" onclick="calculaPrimers();">
+
+        <!--resultats-->
+        <div id="factorial"></div>
+        <div id="fibonacci"></div>
+        <div id="numerosPrimers"></div>
+        <script>
+
+            var input = document.getElementById('numero');
+
+            function calculaFactorial() 
+            {
+
+                var numero = input.value;
+                var codiFactorial = "";
+                var resultFact = document.getElementById('factorial');
+                var contador = numero;
+                codiFactorial += numero + " = ";
+                var total = 1;
+
+                for (let i = 1; i<=numero; i++) 
+                {
+                    if(codiFactorial!= numero + " = ") 
+                    {
+                        codiFactorial += "*" + contador--;
+                    } 
+                    else 
+                    {
+                        codiFactorial += contador--;
+                    }
+
+                    total *= i;
+                }
+
+                codiFactorial += " Total Factorial=" + total ;
+                resultFact.innerHTML = codiFactorial;
+            }
+
+            function calculaFibonacci() 
+            {
+                var a = 1, b = 0, temporal;
+                var num = input.value;
+                while ( num >= 1){
+                    temporal = a;
+                    a = a + b;
+                    b = temporal;
+                    num--;
+                }
+
+                var resutatFibo = document.getElementById('fibonacci').innerHTML = "Fibonacci: " + b;
+           
+            }
+
+            function calculaPrimers() 
+            {
+                var numero = input.value;
+                for (var i = 2; i < numero; i++) 
+                {
+                    if (numero % i == 0) 
+                    {
+                        document.getElementById('numerosPrimers').innerHTML = ("");
+                        return false;
+                    }
+                    if (numero == 1) 
+                    {
+                        document.getElementById('numerosPrimers').innerHTML = ( "1 = no es un numero primer.");
+                        return false;
+                    } else 
+                    {
+                        document.getElementById('numerosPrimers').innerHTML = (numero + ", ");
+                        numero --;
+                        return true;
+                    }
+                }
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="cuadro">
+    <input type="button" value="Comproba" onclick="mirar_text()">
+    <script>
+        
+        function mirar_text()
+        {
+
+            var t = document.getElementById("cuadro").value;
+            
+
+
+            // Fa un array fragmentant un string quan troba una 'a'
+            var talls = t.split("a");
+
+            // Agafa tots els caràcters d'un array i els torna a juntar, i subtitueix les 'a' per '@'
+            var junt = talls.join("@");
+
+            alert(junt);
+
+
+            
+
+            var rex = /[a-zA-Z0-9]@/;
+
+            alert(rex.test(t));
+
+            // toUpperCase()
+            // trim() = treu tots els espais de la cadena de caràcters
+            if(t.toLowerCase() == "abc")
+            {
+
+                alert("Pots entrar!!!");
+
+            }
+            else
+            {
+
+                alert("No pots entrar!!!");
+
+            }
+
+            // Substitueix només una vegada el caràcter 'a' per una '@'
+            alert(t.replace("a","@"));
+
+            alert(talls[0]);
+
+        }
+
+    </script>
+</body>
+</html>

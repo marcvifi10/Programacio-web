@@ -1,0 +1,8 @@
+// Crear coses dinàmiques
+
+$(document).on("click",".filacomanda",function()
+{
+
+
+
+});

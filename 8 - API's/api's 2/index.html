@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>API 2</title>
+        <meta charset="utf8">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css">
+        <style>
+        
+            #etiquetes
+            {
+
+                position: absolute;
+                left: 50px;
+                top: 25px;
+
+            }
+
+            #boto
+            {
+
+                position: absolute;
+                top: 75px;
+                left: 50px;
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="contingut">
+            <div id="etiquetes">
+                <strong>ETIQUETA: </strong>
+                <input type="text" id="etiqueta">
+            </div>
+            <br><br>
+            <div id="boto">
+                <input type="button" id="buscar" value="BUSCAR">
+            </div>
+            <br><br>
+            <br><br>
+            <div id="tot" class="container">
+                <div class="row">
+                    <div id="content" class="col-lg-12 col-md-12 col-sm-4 col-xs-4">
+                        <p id="imatge"></p>
+                        <p id="titol"></p>
+                    </div>
+                    <div id="div_pagination">
+                        <input type="hidden" id="txt_rowid" value="0">
+                        <input type="hidden" id="txt_allcount" value="0">
+                        <input type="button" class="button" value="Previous" id="but_prev" />
+                        
+                        <input type="button" class="button" value="Next" id="but_next" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script>
+
+            $(document).ready(function()
+            {
+
+                var url = "https://www.flickr.com/services/rest/";
+                var apiKey = "&api_key=eb0635ab8c501bce6f6a3c617f8ddc4f";
+                var format = "&format=json&nojsoncallback=1";
+               
+                $("#buscar").click(function(){
+
+                    var metode = "?method=flickr.photos.search";
+                    var tag = $("#etiqueta").val();
+                    var CallUrl = url + metode + apiKey + "&tags=" + tag + format;
+
+                    $.ajax({
+
+                        url: CallUrl,
+                        method: "GET",
+                        dataType: "json",
+                        success: function(json, result){
+
+                            var imatge = "";
+
+                            var titol = "";
+
+                            var photosHTML = "";
+
+                            alert(json);
+
+                            $.each(json["photos"]["photo"], function(i, photo){
+
+                                imatge += "<img src='https://farm" + photo['farm'] + ".staticflickr.com/" + photo['server'] + "/" + photo['id'] + "_" + photo['secret'] + ".jpg' width='33%' height='33%'>";
+
+                                titol += "<strong>Título: </strong>" + photo['title'];
+
+                                photosHTML += imatge;
+
+                                photosHTML += titol;
+
+                            });
+
+                            $("#content").html(photosHTML);
+
+                        }
+
+                    });
+
+                });
+
+                
+
+            });
+
+        </script>
+    </body>
+</html>

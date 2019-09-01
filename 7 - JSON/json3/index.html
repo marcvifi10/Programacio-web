@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON3</title>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <div id="cos" align="center">
+
+        </div>
+        <script src="../jquery-3.4.1.min.js"></script>
+        <script>
+        
+           $(document).ready(function()
+           {
+
+            $.ajax({
+
+                url:"aparcaments.json",
+                method:"get",
+                dataType:"json",
+                success:function(data,status)
+                {
+
+                    // $("#nom").html(data.nom);
+                    // $("#preu").html(data.preu);
+
+                    // data.products = selecciones l'objecte data i l'array products
+
+                    var taula = "<table border='1' style='width:60%; align-content: center;'>";
+                    taula += "<tr align='center'>";
+                    taula += "<td style='align-content: center;'>Adreça</td>";
+                    taula += "<td>Horari</td>";
+                    taula += "<td>Tarifes</td>";
+                    taula += "<td>Accés</td>";
+                    taula += "</tr>";
+
+                    $.each(data.ParkingList.Parking,function(i,item)
+                    {
+
+                        taula += "<tr><td>";
+                        taula += item.Name;
+                        taula += "</td>";
+                        taula += "<td>";
+                        taula += item.Open + " - ";
+                        taula += item.Close;
+                        taula += "</td>";
+                        taula += "<td>";
+                        if(Array.isArray(item.ParkingPriceList.Price))
+                        {
+
+                            taula += "<ul>";
+
+                            $.each(item.ParkingPriceList.Price,function(i2,item2)
+                            {
+
+                                taula += "<li>";
+                                taula += item2.VehicleType + ": ";
+                                taula += item2.Amount;
+                                taula += "</li>";
+
+                            });
+
+                        }
+                        else
+                        {
+                            taula += item.ParkingPriceList.Price.VehicleType + " " + item.ParkingPriceList.Price.Amount;
+                        }
+
+                        taula += "</td>";
+                        taula += "<td>";
+                        
+                        if(Array.isArray(item.ParkingAccess.Access))
+                        {
+
+                            $.each(item.ParkingAccess.Access,function(i3,item3)
+                            {
+
+                                taula += item3.AccessAddress;
+
+                            });
+
+                        }
+                        else
+                        {
+
+                            taula += item.ParkingAccess.Access.AccessAddress;
+
+                        }
+
+                        taula += "</td></tr>";
+
+                    });
+
+                    taula += "</table>";
+
+                    $("#cos").html(taula);
+
+                },
+                error:function()
+                {
+
+
+
+                }
+
+                });
+
+            });
+        
+        </script>
+    </body>
+</html>

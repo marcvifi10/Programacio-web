@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="../tema3_bootstrap/bootstrap-3.4.1-dist/css/bootstrap.css">
+    </head>
+    <style>
+
+        body 
+        {
+            font-family: Helvetica, sans-serif;
+            background-image: url(gelateria.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        header 
+        {
+            background-color: rgba(0, 0, 0, 0.6);
+            height: 100px;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            width: 900px;
+            margin: auto;
+            margin-top: 70px;
+        }
+
+        h1 
+        {
+            font-size: 50px;
+            margin-top: 15px;
+        }
+
+        form 
+        {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            width: 700px;
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        input 
+        {
+            color: black;
+        }
+
+        select 
+        {
+            
+            color: black;
+        }
+
+        input[type=button] 
+        {
+            width: 100px;
+            background-color: black;
+            color: white;
+            border: 1px white solid;
+        }
+
+        span 
+        {
+            margin-left: 75px;
+        }
+
+        img 
+        {
+            width: 320px;
+            height: 320px;
+            margin-top: 20px;
+            padding: 3px;
+            border-radius: 15px;
+        }
+
+        .totals 
+        {
+            position: relative;
+            width: 300px;
+            height: auto;
+            padding: 10px;
+            float: left;
+            margin-top: 125px;
+        }
+
+        td 
+        {
+            padding: 4px;
+        }
+        
+    </style>
+    <body>
+        <div class="container">
+            <div class="row">
+                <header>
+                    <div class="col-xs-12">
+                        <h1>Gelateria:</h1>
+                    </div>  
+                </header>
+            </div>
+            <div class="row">
+                <div class="col-xs-7">
+                    <form action="" name="form1">
+                        <h2>Selecciona el teu gelat:</h2>
+                        <table border="1">
+                            <tr>
+                                <td>
+                                    <label for="tipus">Tipus: </label>
+                                </td>
+                                <td>
+                                    <select name="tipus" id="" onchange="canviaImatge(); mostraPreu();">
+                                        <option value=""> -- Selecciona el tipus --</option>
+                                        <option value="2.99"> Cucurutxo </option></a>
+                                        <option value="4.99"> Copa </option>
+                                        <option value="1.25"> Vaset </option>
+                                    </select>
+                                </td>
+                                <td><span id="preuTipus"></span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="boles">Boles: </label>
+                                </td>
+                                <td>
+                                    <input type="number" name="boles" id="" onchange="mostraPreu();">
+                                </td>
+                                <td><span id="preuBoles"></span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="topping">Topping: </label></td>
+                                <td>
+                                    <input type="number" name="topping" id="" onchange="mostraPreu();">
+                                </td>
+                                <td><span id="preuTopping"></span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="sirope">Sirope: </label></td>
+                                <td>
+                                    <input type="number" name="sirope" id="" onchange="mostraPreu();">
+                                </td>
+                                <td><span id="preuSirope"></span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="cireres">Cireres: </label></td>
+                                <td>
+                                    <input type="number" name="cireres" id="" onchange="mostraPreu();">
+                                </td>
+                                <td><span id="preuCireres"></span></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td><span id="resum">Resum: 0 €</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="quantitat">Quantitat: </label>
+                                </td>
+                                <td>
+                                    <input type="number" name="quantitat" id="" onchange="mostraPreu();" value="1">
+                                </td>
+                                <td><span id="total" >Total: 0 €</span></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <div class="col-xs-5">
+                    <span class="img_gelat">
+                        <img src="triagelat.jpg" alt="" id="imatge">
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script>
+            function canviaImatge() {
+                var imatge1 = document.forms['form1']['tipus'].value;
+                if(imatge1 == "2.99") {
+                    imatge.src = "cucurucho.jpg";
+                } else if(imatge1 == "4.99") {
+                    imatge.src = "copa.jpg";
+                } else {
+                    imatge.src = "tarrina.jpg";
+                }
+            }
+            var tipus = 0;
+            var boles = 0;
+            var topping = 0;
+            var sirope = 0;
+            var cireres = 0;
+            var quantitat = 0;
+            
+            function mostraPreu() {
+                tipus = document.forms['form1']['tipus'];
+                boles = document.forms['form1']['boles'].value;
+                topping = document.forms['form1']['topping'].value;
+                sirope = document.forms['form1']['sirope'].value;
+                cireres = document.forms['form1']['cireres'].value;
+                quantitat = document.forms['form1']['quantitat'].value;
+
+                var preuBoles = boles * 0.50;
+                var preuTopping = topping * 0.25;
+                var preuSirope = sirope * 0.15;
+                var preuCireres = cireres * 0.75;
+                var resum = (preuBoles + preuCireres + preuTopping + preuSirope + preuCireres + (tipus.value)*1);
+                var preuFinal = resum * quantitat;
+
+                document.getElementById('preuTipus').innerHTML = tipus.value + " €";
+                document.getElementById('preuBoles').innerHTML = preuBoles.toFixed(2) + " €";
+                document.getElementById('preuTopping').innerHTML = preuTopping.toFixed(2) + " €";
+                document.getElementById('preuSirope').innerHTML = preuSirope.toFixed(2) + " €";
+                document.getElementById('preuCireres').innerHTML = preuCireres.toFixed(2) + " €";
+                document.getElementById('resum').innerHTML = 'Resum: ' + resum.toFixed(2) + " €";
+                document.getElementById('total').innerHTML = 'Total: ' + preuFinal.toFixed(2) + " €";
+            }
+        </script>
+    </body>
+</html>

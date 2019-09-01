@@ -1,0 +1,283 @@
+<html>
+    <head>
+        <title>J12</title>
+        <link rel="stylesheet" type="text/css" href="estils.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+        <meta charset="utf8">
+        <style>
+        
+            .destacat
+            {
+
+                background-color: black;
+
+            }
+
+            #opcio1
+            {
+
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                margin-top: 400px;
+                right: 800px;
+            }
+
+            #opcio2
+            {
+
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                margin-top: 400px;
+                right: 720px;
+
+            }
+
+            #opcio3
+            {
+
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                margin-top: 400px;
+                right: 630px;
+
+            }
+
+            #seleccionada
+            {
+
+                position: absolute;
+                margin-top: 30px;
+                right: 550px;
+                width: 300px;
+                height: 320px;
+                border: 1px solid black;
+
+            }
+
+            .btn
+            {
+
+                margin-top: 30px;
+                right: 400px;
+
+            }
+
+            .selected
+            {
+
+                border: 5px solid black;
+
+            }
+
+            #nom-producte
+            {
+
+                position: absolute;
+                width: 200px;
+                left: 1000px;
+                top: 80px;
+
+            }
+
+            #preu-producte
+            {
+
+                position: absolute;
+                width: 150px;
+                left: 1000px;
+                top: 110px;
+
+            }
+
+            #desc-producte
+            {
+
+                position: absolute;
+                width: 250px;
+                left: 1000px;
+                top: 140px;
+
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div class="class-xs-3 btn btn-primary" id="btn-hivern" onclick="canviarFons('hivern')">Hivern</div>
+        <div class="class-xs-3 btn btn-primary" id="btn-primavera" onclick="canviarFons('primavera')">Primavera</div>
+        <div class="class-xs-3 btn btn-primary" id="btn-estiu" onclick="canviarFons('estiu')">Estiu</div>
+        <div class="class-xs-3 btn btn-primary" id="btn-tardor" onclick="canviarFons('tardor')">Tardor</div>
+        <div class="row">
+            <div class="container">
+                <div id="imatges">
+                    <img src="" id="seleccionada">
+                    <img src="caballo.jpg" id="opcio1" onclick="canviarImatge('caballo')">
+                    <img src="gato.jpg" id="opcio2" onclick="canviarImatge('gato')">
+                    <img src="perro.jpg" id="opcio3" onclick="canviarImatge('perro')">
+                </div>
+                <div id="descripcio">
+                    <div id="nom-producte">
+
+                    </div>
+                    <div id="preu-producte">
+
+                    </div>
+                    <div id="desc-producte">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../jquery-3.4.1.min.js"></script>
+        <script>
+        
+            $(document).ready(function()
+            {
+
+                $("#btn-hivern").click(function()
+                {
+
+                    $("#btn-hivern").addClass("destacat");
+                    $("#btn-primavera").removeClass("destacat");
+                    $("#btn-estiu").removeClass("destacat");
+                    $("#btn-tardor").removeClass("destacat");
+                    canviarFons("hivern");
+
+                    $("#nom-producte").load("hivern.html #nom");
+                    $("#preu-producte").load("hivern.html #preu");
+                    $("#desc-producte").load("hivern.html #descripcio");
+
+
+                });
+
+                $("#btn-primavera").click(function()
+                {
+
+                    $("#btn-hivern").removeClass("destacat");
+                    $("#btn-primavera").addClass("destacat");
+                    $("#btn-estiu").removeClass("destacat");
+                    $("#btn-tardor").removeClass("destacat");
+                    canviarFons("primavera");
+
+                    $("#nom-producte").load("primavera.html #nom");
+                    $("#preu-producte").load("primavera.html #preu");
+                    $("#desc-producte").load("primavera.html #descripcio");
+
+                });
+
+                $("#btn-estiu").click(function()
+                {
+
+                    $("#btn-hivern").removeClass("destacat");
+                    $("#btn-primavera").removeClass("destacat");
+                    $("#btn-estiu").addClass("destacat");
+                    $("#btn-tardor").removeClass("destacat");
+                    canviarFons("estiu");
+
+                    $("#nom-producte").load("estiu.html #nom");
+                    $("#preu-producte").load("estiu.html #preu");
+                    $("#desc-producte").load("estiu.html #descripcio");
+
+                });
+
+                $("#btn-tardor").click(function()
+                {
+
+                    $("#btn-hivern").removeClass("destacat");
+                    $("#btn-primavera").removeClass("destacat");
+                    $("#btn-estiu").removeClass("destacat");
+                    $("#btn-tardor").addClass("destacat");
+                    canviarFons("tardor");
+
+                    $("#nom-producte").load("tardor.html #nom");
+                    $("#preu-producte").load("tardor.html #preu");
+                    $("#desc-producte").load("tardor.html #descripcio");
+
+                });
+
+
+
+            });
+
+            function canviarImatge(imatge)
+            {
+
+
+                $("#seleccionada").attr("src", imatge + ".jpg");
+                
+                if(imatge == "caballo")
+                {
+
+                    $("#opcio1").addClass("selected");
+                    $("#opcio2").removeClass("selected");
+                    $("#opcio3").removeClass("selected");
+
+                }
+                else if(imatge == "gato")
+                {
+
+                    $("#opcio1").removeClass("selected");
+                    $("#opcio2").addClass("selected");
+                    $("#opcio3").removeClass("selected");
+
+
+                }
+                else if(imatge == "perro")
+                {
+
+                    $("#opcio1").removeClass("selected");
+                    $("#opcio2").removeClass("selected");
+                    $("#opcio3").addClass("selected");
+
+                }
+                else
+                {
+
+
+
+                }
+
+
+            }
+
+            function canviarFons(estacio)
+            {
+
+                if(estacio == "hivern" || estacio == "Hivern" || estacio == "HIVERN")
+                {
+
+                    document.body.style.backgroundColor = "skyblue";
+
+                }
+                else if(estacio == "primavera" || estacio == "Primavera" || estacio == "PRIMAVERA")
+                {
+
+                    document.body.style.backgroundColor = "green";
+
+                }
+                else if(estacio == "estiu" || estacio == "Estiu" || estacio == "ESTIU")
+                {
+
+                    document.body.style.backgroundColor = "yellow";
+
+                }
+                else if(estacio == "tardor" || estacio == "Tardor" || estacio == "TARDOR")
+                {
+
+                    document.body.style.backgroundColor = "orange";
+
+                }
+                else
+                {
+
+                    document.body.style.backgroundImage = "url('')";
+
+                }
+
+            }
+        
+        </script>
+    </body>
+</html>

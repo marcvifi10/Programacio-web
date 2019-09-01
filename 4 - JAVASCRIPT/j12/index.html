@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>J12</title>
+        <link rel="stylesheet" type="text/css" href="estils.css">
+        <meta charset="utf8">
+    </head>
+    <body>
+        <script>
+        
+            var data = new Date();
+
+            var dia = data.getDate();
+            var mes = data.getMonth();
+            var any = data.getFullYear();
+
+            var mesos = ["Gener","Febrer","Març","Abril","Maig","Juny","Juliol","Agost","Setembre","Octubre","Novembre","Decembre"];
+
+            if(mesos[mes] == "Decembre" && dia > 21 || mesos[mes] == "Decembre" || mesos[mes] == "Gener" || mesos[mes] == "Febrer" || mesos[mes] == "Març" && dia < 21) 
+            {
+
+                if(mesos[mes] == "Gener" || mesos[mes] == "Febrer")
+                {
+
+                    document.body.style.backgroundImage = "url('invierno.jpg')";
+
+                }
+
+                else if(mesos[mes] == "Març" && dia < 21)
+                {
+                    document.body.style.backgroundImage = "url('invierno.jpg')";
+                }
+
+            }
+
+
+            else if(mesos[mes] == "Març" || mesos[mes] == "Abril" || mesos[mes] == "Maig" || mesos[mes] == "Juny" && dia < 21) 
+            {
+
+                if(mesos[mes] == "Març" && dia > 21)
+                {
+                    document.body.style.backgroundImage = "url('primaver.jpg')";
+                }
+
+                else if(mesos[mes] == "Abril" || mesos[mes] == "Maig")
+                {
+
+                    document.body.style.backgroundImage = "url('primaver.jpg')";
+
+                }
+
+                else if(mesos[mes] == "Juny" && dia < 21)
+                {
+                    document.body.style.backgroundImage = "url('primavera.jpg')";
+                }
+
+            }
+            else if(mesos[mes] == "Juny" || mesos[mes] == "Juliol" || mesos[mes] == "Agost" || mesos[mes] == "Setembre" && dia < 21) 
+            {
+
+                if(mesos[mes] == "Juny" && dia > 21)
+                {
+                    document.body.style.backgroundImage = "url('verano.jpg')";
+                }
+
+                else if(mesos[mes] == "Juliol" || mesos[mes] == "Agost")
+                {
+
+                    document.body.style.backgroundImage = "url('verano.jpg')";
+
+                }
+
+                else if(mesos[mes] == "Setembre" && dia < 21)
+                {
+                    document.body.style.backgroundImage = "url('verano.jpg')";
+                }
+
+            }
+            else if(mesos[mes] == "Decembre" && dia < 21 || mesos[mes] == "Octubre" || mesos[mes] == "Novembre" || mesos[mes] == "Setembre" || mesos[mes] == "Setembre" && dia > 21) 
+            {
+
+                if(mesos[mes] == "Setembre" && dia > 21)
+                {
+                    document.body.style.backgroundImage = "url('otono.jpg')";
+                }
+
+                else if(mesos[mes] == "Octubre" || mesos[mes] == "Decembre")
+                {
+
+                    document.body.style.backgroundImage = "url('otono.jpg')";
+
+                }
+
+            }
+        
+        </script>
+    </body>
+</html>

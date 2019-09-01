@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>28</title>
+    </head>
+    <body>
+        <script>
+            var d = new Date();
+            var dia = d.getDay();
+
+            switch(dia) {
+                case 1: 
+                case 2:
+                case 3: 
+                case 4:
+                case 5: 
+                    alert('Obert');
+                    break;
+                case 6: //per no repetir el codi, es deixa buit i que executi l'ultim si fan el mateix
+                case 0: 
+                    alert('Tancat');
+                    break;
+                default:
+                    alert('Obert');
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <style>
+        a {
+            margin: 40px;
+            border: 1px solid black;
+        }
+    </style>
+    <body>
+        <img src="gos.jpg" alt="" srcset="" id="imatge">
+        <br>
+        <a href="#" onclick="mostrarImatge('gat.jpg')">Gat</a>
+        <a href="#" onclick="mostrarImatge('gos.jpg')">Gos</a>
+        <a href="#" onclick="mostrarImatge('cavall.jpg')">Cavall</a>
+        <script>
+
+            function mostrarImatge(arxiu) 
+            {
+                var imatge = document.getElementById('imatge');
+                imatge.src = arxiu;
+                return false;
+            }
+            
+        </script>
+    </body>
+</html>

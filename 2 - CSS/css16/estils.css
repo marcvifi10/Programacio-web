@@ -1,0 +1,53 @@
+@keyframes llums
+{
+
+    /* from { background-color: rgb(252, 24, 24); }
+
+    to {background-color: rgb(241, 241, 0); } */
+
+    0% { background-color: red; width: 100px; }
+
+    5% { background-color: red; width: 110px; }
+
+    10% { background-color: yellow; width: 120px; }
+
+    20% { background-color: green; width: 130px; }
+
+    30% { background-color: violet; width: 140px; }
+
+    40% { background-color: blue; width: 150px; }
+
+    50% { background-color: red; width: 160px; }
+
+    60% { background-color: yellow; width: 170px; }
+
+    70% { background-color: green; width: 180px; }
+
+    80% { background-color: violet; width: 190px; }
+
+    90% { background-color: blue; width: 200px; }
+
+    100% { background-color: black; width: 210px; }
+
+}
+
+#capa1
+{
+
+    width: 100px;
+    height: 100px;
+
+    background-color: #f30909;
+    animation-name: llums;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+
+}
+
+#capa1:hover
+{
+
+    animation-play-state: running;
+
+}

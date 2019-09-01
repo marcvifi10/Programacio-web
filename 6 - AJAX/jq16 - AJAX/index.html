@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>16 - AJAX</title>
+        <meta charset="utf8">
+        <style>
+        
+            #capa1
+            {
+
+                position: absolute;
+                top: 50px;
+                left: 50px;
+                width: 300px;
+                height: 300px;
+                background-color: red;
+
+            }
+
+            #capa2
+            {
+
+                position: absolute;
+                top: 50px;
+                left: 400px;
+                width: 300px;
+                height: 300px;
+                background-color: blue;
+
+            }
+
+            #btn1
+            {
+
+                position: absolute;
+                top: 400px;
+                left: 100px;
+
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="capa1">
+
+        </div>
+        <div id="capa2">
+
+        </div>
+        <input id="btn1" type="button" value="CLICK!!!">
+        <script src="../jquery-3.4.1.min.js"></script>
+        <script>
+        
+            $(document).ready(function()
+            {
+
+                $("#btn1").click(function()
+                {
+
+                    $.get("contingut.html", function(data,status,xhr)
+                    {
+
+                        if(status == "success")
+                        {
+
+                            // alert("Estat: " + status + "\nData: \n" + data + "\nXHR: " + xhr);
+
+                            // $("#capa1").html(data);
+                            // $("#capa2").html(data);
+
+                            $("#capa1").show(1000, function()
+                            {
+
+                                $("#capa1").html();
+
+                            });
+
+                            $("#capa2").html(data);
+
+                        }
+
+                    });
+
+                });
+
+            });
+        
+        </script>
+    </body>
+</html>

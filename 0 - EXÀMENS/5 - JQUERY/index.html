@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EXÀMEN JQ</title>
+        <meta charset="utf8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>
+
+            #selector
+            {
+
+                margin-top: 30px;
+                margin-left: 50px;
+
+            }
+
+            #resultats
+            {
+
+                width: 1200px;
+                height: 500px;
+                margin-left: 50px;
+                margin-top: 10px;
+                overflow: scroll;
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+        <script>
+    
+            $(document).ready(function()
+            {
+    
+                $("#select1").change(function()
+                {
+
+                    var monedes = $("#select1").val();
+                    var contingut = "<h2>TASA D'INTERCANVI</h2>";
+
+                    var data_avui = new Date();
+                    var dia_actual = data_avui.getDate();
+                    var mes_actual = data_avui.getMonth() + 1;
+                    var any_actual = data_avui.getFullYear();
+                    var dia_setmana = data_avui.getDay();
+
+                    
+                    $.ajax({
+    
+                        url:"https://api.ratesapi.io/api/" + any_actual + "-" + mes_actual + "-" + dia_actual + "?symbols=USD,GBP,JPY,MXN",
+                        type:"GET",
+                        dataType:"json",
+                        success: function(data,status){
+    
+                            alert("Tot va bé!!!");
+                            alert(JSON.stringify(data));
+
+                            var rateGBP = data["rates"]["GBP"];
+                            var rateUSD = data["rates"]["USD"];
+                            var rateJPY = data["rates"]["JPY"];
+                            var rateMXN = data["rates"]["MXN"];
+
+                            alert(rateGBP);
+                            alert(rateUSD);
+                            alert(rateJPY);
+                            alert(rateMXN);
+
+                            contingut += "<div class='progress'>";
+                            contingut += "<div class='progress-bar progress-bar-striped progress-bar-animated active' style='width: 25%; width: 50%;'>";
+                            contingut += "<span class='sr-only'>25% complete</span>";
+                            contingut += "</div>";
+                            contingut += "</div>";
+                            contingut += "<p>"+rateGBP+"</p>";
+
+                            //var valor = rate;
+                            
+                        },
+                        error: function()
+                        {
+    
+                            alert("Error!!!");
+    
+                        }
+    
+                    });
+
+                    $("#resultats").html(contingut);
+                    // $("#resultats").html(valor);
+
+                });
+                
+            });
+            
+        </script>
+        <div id="selector">
+            <b>MONEDA: </b>
+            <select id="select1">
+                <option id="euros">Euros</option>
+                <option value="dolar">Dòlars</option>
+                <option value="yen">Yen</option>
+                <option value="lliures">Lliures</option>
+                <option value="pesos">Pesos</option>
+            </select>
+        </div>
+        <div id="resultats">
+
+        </div>
+    </body>
+</html>

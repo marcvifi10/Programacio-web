@@ -1,0 +1,153 @@
+#capa1
+{
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    background-color: red;
+
+    margin-left: 90px;
+    margin-top: 70px;
+    
+    background-image: url(logo.png);
+
+}
+
+#capa2
+{
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    background-color: blue;
+
+    margin-left: 260px;
+    margin-top: 70px;
+
+    background-image: url(logo.png);
+
+    background-position: top right;
+
+}
+
+#capa3
+{
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    background-color: yellow;
+
+    margin-left: 90px;
+    margin-top: 220px;
+
+    background-image: url(logo.png);
+
+    background-position: bottom left;
+
+}
+
+#capa4
+{
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    background-color: green;
+
+    margin-left: 260px;
+    margin-top: 220px;
+
+    background-image: url(logo.png);
+
+    background-position: bottom right;
+
+}
+
+#capa1:hover
+{
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    background-color: red;
+
+    margin-left: 90px;
+    margin-top: 70px;
+
+    transition: 0.5s;
+
+    background-image: url(logo.png);
+
+}
+
+#capa2:hover
+{
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    background-color: blue;
+
+    margin-left: 200px;
+    margin-top: 70px;
+
+    transition: 0.5s;
+
+    background-image: url(logo.png);
+
+    background-position: top right;
+
+}
+
+#capa3:hover
+{
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    background-color: yellow;
+
+    margin-left: 90px;
+    margin-top: 160px;
+
+    transition: 0.5s;
+
+    background-image: url(logo.png);
+
+}
+
+#capa4:hover
+{
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    background-color: green;
+
+    margin-left: 200px;
+    margin-top: 160px;
+
+    transition: 0.5s;
+
+    background-image: url(logo.png);
+
+    background-position: bottom right;
+
+}

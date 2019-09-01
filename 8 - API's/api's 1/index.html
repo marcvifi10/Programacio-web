@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>GitHub Repos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <style>
+
+            #busqueda
+            {
+
+                position: absolute;
+
+                left: 50px;
+
+            }
+        
+            #repositoris
+            {
+
+                position: absolute;
+
+                top: 8px;
+                left: 700px;
+
+            }
+        
+        </style>
+    </head>
+    <body>
+        <strong>NOM DE L'USUARI:</strong>
+        <br><br>
+        <input type="text" id="username"/>
+        <br><br>
+        <input type="button" id="buscar" value="BUSCAR USUARI">
+        <button onclick="CargaRepos()">CARGA REPOSITORIS</button>
+        <br><br>
+        <div id="busqueda">
+            <p>
+                <!--strong>AVATAR:</strong>-->
+            </p>
+            <p id="img"></p>
+            <p id="nom"></p>
+            <p id="followers"></p>
+            <p id="following"></p>
+            <p id="repos"></p>
+        </div>
+        <div id="repositoris">
+            <strong>REPOSITORIS:</strong>
+            <ul id="repos">
+                <li>
+                    <a href="{repo.html_url}">
+                        {repo.full_name}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <script src="../jquery-3.4.1.min.js"></script>
+        <script>
+
+            $(document).ready(function()
+            {
+
+                $("#buscar").click(function()
+                {
+
+                    var nom = $("#username").val();
+
+                    $.ajax({
+
+                        url:"https://api.github.com/users/" + nom + "?client_id=25c5a7ef890244f1e62d&client_secret=d72a91bde9e08d1c079a3971ff8cc90904921a4e",
+                        method:"GET",
+                        dataType:"json",
+                        success:function(json,result){
+
+                            $("#busqueda").html("<br><strong>AVATAR: </strong><p id='img'><img src='"+json['avatar_url']+"'></p><p id='nom'><strong>Nom d'usuari: </strong>"+json['name']+"</p><p id='followers'><strong>Seguidors: </strong>"+json['followers']+"</p><p id='following'><strong>Segueix: </strong>"+json['following']+"</p><p id='respos'><strong>Nombre de repositoris: </strong>"+json['public_repos']+"</p>");
+
+                        }
+
+                    });
+
+                });
+            
+            });
+
+            function CargaRepos() 
+            {
+
+                $("#repos").empty();
+                let url = "https://api.github.com/users/" + $("#username").val() + "/repos";
+                
+                $.ajax({
+                    url,
+                    success: displayRepos,
+                    error: displayError
+                });
+
+                function displayRepos(respos) 
+                {
+                    for (let repo of respos) 
+                    {
+                        let link = $("<a target='_blank'>").text(repo.full_name);
+                        link.attr('href', repo.html_url);
+                        $("#repos").append($('<li>').append(link));
+                    }
+                }
+        
+                function displayError(err) 
+                {
+                    $("#repos").append($("<li>Error</li>"));
+                }
+            }
+
+        </script>  
+    </body>
+</html>

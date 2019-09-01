@@ -1,0 +1,21 @@
+:root
+{
+
+    /* Declarem una variable */
+    --colorprincipal: red;
+
+}
+
+h1
+{
+
+    color: var(--colorprincipal);
+
+}
+
+#capa1
+{
+
+    background-color: var(--colorprincipal);
+
+}

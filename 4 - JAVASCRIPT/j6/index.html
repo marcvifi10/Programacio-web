@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J6</title>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css">
+        <link rel="stylesheet" type="text/css" href="estils.css">
+    </head>
+    <body>
+        <script>
+
+            function ConvertirToFar()
+            {
+
+                // (°C × 9/5) + 32
+
+                var cel = document.forms["form1"]["cel"].value;
+
+                var far = ((document.forms["form1"]["cel"].value * 1.8) + 32);
+
+                document.forms["form1"]["far"].value = far;
+
+                // alert(far);
+
+            }
+
+            function ConvertirToCel()
+            {
+
+                // (°F - 32) x 5/9 = °C
+
+                var far = document.forms["form1"]["far"].value;
+
+                var cel = (document.forms["form1"]["far"].value - 32) * 1.8;
+
+                document.forms["form1"]["cel"].value = cel;
+
+                // alert(cel);
+
+            }
+
+        </script>
+        <div id="form">
+            <form name="form1">
+                Celsius: <input type="text" name="cel">
+                <span class="glyphicon glyphicon-arrow-down" onclick="ConvertirToFar()"></span>
+                <br><br>
+                Fahrenheit: <input type="text" name="far">
+                <span class="glyphicon glyphicon-arrow-up" onclick="ConvertirToCel()"></span>
+                <br><br>
+            </form>
+        </div>
+    </body>
+</html>

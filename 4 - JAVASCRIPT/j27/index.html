@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>27</title>
+    </head>
+    <style>
+        body {
+            font-family: Helvetica;
+        }
+        h1 {
+            font-size: 75px;
+        }
+    </style>
+    <body>
+        <div class="resultat"></div>
+        <script>
+            function mostraData() {
+                var d = new Date();
+                var dia = d.getDate();
+                var mes = d.getMonth();
+
+                if( (mes==0) || (mes==1) || ((mes==2) && (dia<21)) || (mes==11) && (dia>=21) ) {
+                    document.write('<h1> Hivern </h1>');
+                    document.body.style.backgroundImage = "url('hivern.jpg')";
+                    document.body.style.backgroundRepeat = "no-repeat";
+                    document.body.style.backgroundSize = "cover";
+                } else if( (mes==3) || (mes==4) || ((mes==5) && (dia<21)) || (mes==2) && (dia>=21) ) {
+                    document.write('<h1> Primavera </h1>');
+                    document.body.style.backgroundImage = "url('primavera.jpg')";
+                    document.body.style.backgroundRepeat = "no-repeat";
+                    document.body.style.backgroundSize = "cover";
+                } else if ( (mes==5) || (mes==6) || ((mes==7) && (dia<21)) || (mes==5) && (dia>=21) ) {
+                    document.write('<h1> Estiu </h1>');
+                    document.body.style.backgroundImage = "url('estiu.jpg')";
+                    document.body.style.backgroundRepeat = "no-repeat";
+                    document.body.style.backgroundSize = "cover";
+                } else if ( (mes==8) || (mes==9) || ((mes==10) && (dia<21)) || (mes==8) && (dia>=21) ) {
+                    document.write('<h1> Tardor </h1>');
+                    document.body.style.backgroundImage = "url('tardor.jpg')";
+                    document.body.style.backgroundRepeat = "no-repeat";
+                    document.body.style.backgroundSize = "cover";
+                }
+            }
+            mostraData();
+        </script>
+    </body>
+</html>

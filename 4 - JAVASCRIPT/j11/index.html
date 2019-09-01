@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>J11</title>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <script>
+        
+            var d = new Date();
+
+            var h = d.getHours();
+            var dia = d.getDate();
+            var mes = d.getMonth();
+
+            if(h <= 12)
+            {
+
+                alert("Bon dia!!!");
+
+            }
+
+            if(h == "12")
+            {
+
+                alert("Es mitgdia!!!");
+
+            }
+            else
+            {
+
+                alert("No es mitgdia!!!");
+
+            }
+
+            if(mes < 3)
+            {
+
+                alert("Hivern");
+
+            }
+            else if(mes >= 3 && mes < 6)
+            {
+
+                alert("Primavera");
+
+            }
+            else if(mes >= 6 && mes < 9)
+            {
+
+                alert("Estiu");
+
+            }
+            else
+            {
+
+                alert("Tardor");
+
+            }
+
+            if(dia == 20)
+            {
+
+                alert("ddd");
+
+            }
+
+            /* === : mira si dos variables són iguals i si són del mateix tipus */
+
+        </script>
+    </body>
+</html>

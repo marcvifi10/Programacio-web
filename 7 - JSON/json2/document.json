@@ -1,0 +1,34 @@
+{
+
+    "result":true,
+    "products":
+    [
+
+        {
+
+            "nom":"producte 1",
+            "preu":25
+
+        },
+        {
+
+            "nom":"producte 2",
+            "preu":35
+
+        },
+        {
+
+            "nom":"producte 3",
+            "preu":45
+
+        },
+        {
+
+            "nom":"producte 4",
+            "preu":55
+
+        }
+
+    ]
+
+}

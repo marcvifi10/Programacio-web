@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JQ4</title>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    </head>
+    <style>
+
+        body 
+        {
+            font-family: Helvetica, sans-serif;
+            background-color: skyblue;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        header 
+        {
+            background-color: rgba(0, 0, 0, 0.6);
+            height: 100px;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            margin: auto;
+            margin-top: 70px;
+        }
+
+        h1 
+        {
+            font-size: 50px;
+            margin-top: 15px;
+        }
+
+        form 
+        {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            /*width: 700px;*/
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        input 
+        {
+            color: black;
+        }
+
+        select 
+        {
+            
+            color: black;
+        }
+
+        input[type=button] 
+        {
+            width: 100px;
+            background-color: black;
+            color: white;
+            border: 1px white solid;
+        }
+
+        span 
+        {
+            margin-left: 75px;
+        }
+
+        #imatge
+        {
+            width: 320px;
+            height: 320px;
+            margin-top: 20px;
+            padding: 3px;
+            border-radius: 15px;
+        }
+
+        #f1
+        {
+
+            align-content: center;
+            width: 100%;
+
+        }
+
+        .totals 
+        {
+            position: relative;
+            width: 300px;
+            height: auto;
+            padding: 10px;
+            float: left;
+            margin-top: 125px;
+        }
+
+        td 
+        {
+            padding: 4px;
+        }
+
+        #fila1
+        {
+
+            visibility: visible;
+            display: block;
+
+        }
+
+        #fila2
+        {
+
+            visibility: hidden;
+            display: none;
+            padding-right: 15px;
+            padding-left: 15px;
+
+        }
+
+        #fila3
+        {
+
+            visibility: hidden;
+            display: none;
+            padding-right: 15px;
+            padding-left: 15px;
+
+        }
+
+        #fila4
+        {
+
+            visibility: hidden;
+            display: none;
+            padding-right: 15px;
+            padding-left: 15px;
+
+        }
+
+        #fila5
+        {
+
+            visibility: hidden;
+            display: none;
+            padding-right: 15px;
+            padding-left: 15px;
+
+        }
+
+        #fila6
+        {
+
+            visibility: hidden;
+            display: none;
+            padding-right: 15px;
+            padding-left: 15px;
+
+        }
+
+        #q
+        {
+
+            padding-right: 15px;
+            padding-left: 15px;
+
+        }
+
+        #five:checked ~ .progress > .progress-bar 
+        {
+            width: 5%;
+            background-color: #f34213;
+        }
+
+        #twentyfive:checked ~ .progress > .progress-bar 
+        {
+            width: 25%;
+            background-color: #f27011;
+        }
+
+        #fifty:checked ~ .progress > .progress-bar 
+        {
+            width: 50%;
+            background-color: #f2b01e;
+        }
+
+        #seventyfive:checked ~ .progress > .progress-bar 
+        {
+            width: 75%;
+            background-color: #f2d31b;
+        }
+
+        #onehundred:checked ~ .progress > .progress-bar 
+        {
+            width: 100%;
+            background-color: #86e01e;
+        }
+
+    </style>
+    <body>
+        <script src="../jquery-3.4.1.min.js"></script>
+        <div class="container">
+            <div class="row">
+                <div class="w3-progress-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="w3-progressbar" style="width:10%"></div>
+                </div>
+            </div>
+            <div class="row">
+                <header>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h1>Gelateria:</h1>
+                    </div>  
+                </header>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8" align="center">
+                    <form action="" name="form1">
+                        <!-- 14% -->
+                        <h2>Selecciona el teu gelat:</h2>
+                        <table border="1">
+                            <tr id="fila1" class="col-xs-12 col-sm-12 col-md-12 col-lg-8" style="width:100%"> 
+                                <td>
+                                    <label for="tipus">Tipus: </label>
+                                </td>
+                                <td>
+                                    <select name="tipus" id="" onchange="canviaImatge(); mostraPreu();">
+                                        <option value=""> -- Selecciona el tipus --</option>
+                                        <option value="2.99"> Cucurutxo </option></a>
+                                        <option value="4.99"> Copa </option>
+                                        <option value="1.25"> Vaset </option>
+                                    </select>
+                                </td>
+                                <td><span id="preuTipus"></span></td>
+                            </tr>
+                            <!-- 28% -->
+                            <tr id="fila2">
+                                <td>
+                                    <label for="boles">Boles: </label>
+                                </td>
+                                <td>
+                                    <input type="number" name="boles" id="" onchange="mostraPreu(); mostraBoles();">
+                                </td>
+                                <td><span id="preuBoles"></span></td>
+                            </tr>
+                            <!-- 42% -->
+                            <tr id="fila3">
+                                <td>
+                                    <label for="topping">Topping: </label></td>
+                                <td>
+                                    <input type="number" name="topping" id="" onchange="mostraPreu(); mostraTopping();">
+                                </td>
+                                <td><span id="preuTopping"></span></td>
+                            </tr>
+                            <!-- 56% -->
+                            <tr id="fila4">
+                                <td>
+                                    <label for="sirope">Sirope: </label></td>
+                                <td>
+                                    <input type="number" name="sirope" id="" onchange="mostraPreu(); mostraSirope();">
+                                </td>
+                                <td><span id="preuSirope"></span></td>
+                            </tr>
+                            <!-- 70% -->
+                            <tr id="fila5">
+                                <td>
+                                    <label for="cireres">Cireres: </label></td>
+                                <td>
+                                    <input type="number" name="cireres" id="" onchange="mostraPreu(); mostraCireres();">
+                                </td>
+                                <td><span id="preuCireres"></span></td>
+                            </tr>
+                            <!-- 85% -->
+                            <tr id="fila6">
+                                <td></td>
+                                <td></td>
+                                <td><span id="resum">Resum: 0 €</span></td>
+                            </tr>
+                            <!-- 100% -->
+                            <div id="fila7">
+                                <tr id="q">
+                                    <td>
+                                        <label for="quantitat">Quantitat: </label>
+                                        <br>
+                                        <input type="number" name="quantitat" onchange="mostraPreu(); mostraQuantitat();" value="1">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span id="total" >Total: 0 €</span></td>
+                                </tr>
+                            </div>
+                        </table>
+                    </form>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4" align="center">
+                    <span class="img_gelat">
+                        <img src="triagelat.jpg" alt="" id="imatge">
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script>
+            function canviaImatge() 
+            {
+                var imatge1 = document.forms['form1']['tipus'].value;
+                if(imatge1 == "2.99") 
+                {
+
+                    imatge.src = "cucurucho.jpg";
+
+                } 
+                else if(imatge1 == "4.99") 
+                {
+
+                    imatge.src = "copa.jpg";
+
+                } 
+                else 
+                {
+
+                    imatge.src = "tarrina.jpg";
+
+                }
+
+                $("#fila1").append("<img src='flecha.jpg' style='width: 100px; heigth: 100px; margin-left:120px;'>");
+                
+                document.getElementById("fila2").style.visibility = "visible";
+                document.getElementById("fila2").style.display = "block";
+
+                // document.getElementById("miBarra").style.visibility = "visible";
+                // document.getElementById("miBarra").style.width = "17%";
+
+            }
+
+            var tipus = 0;
+            var boles = 0;
+            var topping = 0;
+            var sirope = 0;
+            var cireres = 0;
+            var quantitat = 0;
+
+            function mostraBoles()
+            {
+
+                $("#fila2").append("<img src='flecha.jpg' style='width: 100px; heigth: 100px; margin-left:120px;'>");
+                
+                document.getElementById("fila3").style.visibility = "visible";
+                document.getElementById("fila3").style.display = "block";
+
+            }
+
+            function mostraTopping()
+            {
+
+                $("#fila3").append("<img src='flecha.jpg' style='width: 100px; heigth: 100px; margin-left:120px;'>");
+                
+                document.getElementById("fila4").style.visibility = "visible";
+                document.getElementById("fila4").style.display = "block";
+
+            }
+
+            function mostraSirope()
+            {
+
+                $("#fila4").append("<img src='flecha.jpg' style='width: 100px; heigth: 100px; margin-left:120px;'>");
+                
+                document.getElementById("fila5").style.visibility = "visible";
+                document.getElementById("fila5").style.display = "block";
+
+            }
+
+            function mostraCireres()
+            {
+
+                $("#fila5").append("<img src='flecha.jpg' style='width: 100px; heigth: 100px; margin-left:120px;'>");
+
+            }
+
+            function mostraQuantitat()
+            {
+
+                $("#fila6").append("<img src='flecha.jpg' style='width: 100px; heigth: 100px; margin-left:120px;'>");
+
+                document.getElementById("q").style.visibility = "visible";
+                document.getElementById("q").style.display = "block";
+
+            }
+            
+            function mostraPreu() 
+            {
+                tipus = document.forms['form1']['tipus'];
+                boles = document.forms['form1']['boles'].value;
+                topping = document.forms['form1']['topping'].value;
+                sirope = document.forms['form1']['sirope'].value;
+                cireres = document.forms['form1']['cireres'].value;
+                quantitat = document.forms['form1']['quantitat'].value;
+
+                var preuBoles = boles * 0.50;
+                var preuTopping = topping * 0.25;
+                var preuSirope = sirope * 0.15;
+                var preuCireres = cireres * 0.75;
+                var resum = (preuBoles + preuCireres + preuTopping + preuSirope + preuCireres + (tipus.value)*1);
+                var preuFinal = resum * quantitat;
+
+                document.getElementById('preuTipus').innerHTML = tipus.value + " €";
+                document.getElementById('preuBoles').innerHTML = preuBoles.toFixed(2) + " €";
+                document.getElementById('preuTopping').innerHTML = preuTopping.toFixed(2) + " €";
+                document.getElementById('preuSirope').innerHTML = preuSirope.toFixed(2) + " €";
+                document.getElementById('preuCireres').innerHTML = preuCireres.toFixed(2) + " €";
+                document.getElementById('resum').innerHTML = 'Resum: ' + resum.toFixed(2) + " €";
+                document.getElementById('total').innerHTML = 'Total: ' + preuFinal.toFixed(2) + " €";
+            }
+            
+        </script>
+    </body>
+</html>

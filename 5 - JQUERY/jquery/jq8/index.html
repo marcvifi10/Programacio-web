@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JQ8</title>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    </head>
+    <style>
+
+        body
+        {
+
+            background-color: aquamarine;
+
+        }
+
+        #block
+        {
+
+            height: 500px;
+            width: 500px;;
+
+        }
+
+        #capa1
+        {
+
+            position: absolute;
+            top: 200px;
+            margin-left: 10px;
+            width: 256px;
+            height: 256px;
+            background-position: top left;
+            background-image: url('galleta.png');
+            background-size: 512px 512px;
+
+        }
+
+        #capa2
+        {
+
+            position: absolute;
+            top: 200px;
+            margin-left: 130px;
+            width: 256px;
+            height: 256px;
+            background-position: top right;
+            background-image: url('galleta.png');
+            background-size: 512px 512px;
+
+        }
+
+        #capa3
+        {
+
+            position: absolute;
+            top: 200px;
+            margin-left: 260px;
+            width: 256px;
+            height: 256px;
+            background-position: bottom left;
+            background-image: url('galleta.png');
+            background-size: 512px 512px;
+
+        }
+
+        #capa4
+        {
+
+            position: absolute;
+            top: 200px;
+            margin-left: 390px;
+            width: 256px;
+            height: 256px;
+            background-position: bottom right;
+            background-image: url('galleta.png');
+            background-size: 512px 512px;
+
+        }
+
+    </style>
+    <body>
+        <h1>TÍTOL</h1>
+        <p>aaaa aaaaaaa aaaaaaa aaaaaa </p>
+        <p>aaaa aaaaaaa aaaaaaa aaaaaa </p>
+        <br><input type="button" id="btn1" value="CLICK 1!">
+        <input type="button" id="btn2" value="CLICK 2!">
+        <script src="../jquery-3.4.1.min.js"></script>
+        <script>
+
+            $(document).ready(function()
+            {
+                $("#btn1").click(function()
+                {
+
+                    // $("h1").css({color:"red"});
+
+                    if($("h1").css("color") == "rgb(255, 0, 0)")
+                    {
+
+                        $("h1").css({color:"black"});
+
+                    }
+                    else
+                    {
+
+                        $("h1").css({color:"red"});
+
+                    }
+
+                });
+
+            });
+
+        </script>
+    </body>
+</html>

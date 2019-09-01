@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JQ9</title>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    </head>
+    <style>
+
+        .destacar
+        {
+
+            color: red;
+
+        }
+
+    </style>
+    <body>
+        <ul>
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+            <li>E</li>
+        </ul>
+        <br><input type="button" id="btn1" value="CLICK 1!">
+        <br><input type="button" id="btn2" value="CLICK 2!">
+        <br><input type="button" id="btn3" value="CLICK 3!">
+        <script src="../jquery-3.4.1.min.js"></script>
+        <script>
+
+            $(document).ready(function()
+            {
+                
+                $("#btn1").click(function()
+                {
+
+                    $("li:first-child").addClass("destacar");
+
+                });
+
+                $("#btn2").click(function()
+                {
+
+                    $("li:first-child").removeClass("destacar");
+
+                });
+
+                $("#btn3").click(function()
+                {
+
+                    $("li:first-child").toggleClass("destacar");
+
+                });
+
+            });
+
+        </script>
+    </body>
+</html>

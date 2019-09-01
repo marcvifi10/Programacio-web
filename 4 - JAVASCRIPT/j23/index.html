@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="" name="form1">
+            <label for="provincia">Provincia: </label>
+            <select name="provincia" id="provincia">
+                <option value="">-- Tria una provincia --</option>
+                <option value="4.99">Barcelona</option>
+                <option value="3.99">Girona</option>
+                <option value="5.99">Tarragona</option>
+                <option value="6.99">Lleida</option>
+            </select>
+            <input type="button" value="Enviar" onclick="enviar();">
+        </form>
+        <p id="despeses">Enviament: </p>
+        <script>
+
+            function enviar() 
+            {
+                var provincia = document.getElementById('provincia');
+                var enviament = document.getElementById('despeses');
+                enviament.innerHTML = 'Enviament: ' + provincia.value + ' €';
+            }
+            
+        </script>
+    </body>
+</html>

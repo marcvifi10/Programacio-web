@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JQ3</title>
+        <meta charset="utf8">
+        <style>
+        
+            #capa1
+            {
+
+                position: absolute;
+                background-color: blue;
+                width: 100px;
+                height: 100px;
+                left: 10px;
+
+            }
+
+            #capa2
+            {
+
+                position: absolute;
+                background-color: red;
+                width: 100px;
+                height: 100px;
+                left: 120px;
+
+            }
+
+            #capa3
+            {
+
+                position: absolute;
+                background-color: green;
+                width: 100px;
+                height: 100px;
+                left: 230px;
+
+            }
+
+            #capa4
+            {
+
+                position: absolute;
+                width: 50px;
+                height: 50px;   
+                top: 150px;
+                display: inline-block;
+                
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="capa1">
+            
+        </div>
+        <div id="capa2">
+            
+        </div>
+        <div id="capa3">
+            
+        </div>
+        <div id="capa4">
+            <button id="boto_amagar">AMAGAR</button>
+            <button id="boto_mostrar">MOSTRAR</button>
+            <button id="boto_toggle">TOGGLE</button>
+        </div>
+        <script src="../jquery-3.4.1.min.js"></script>
+        <script>
+        
+            $(document).ready(function()
+            {
+
+                // delay = espera 'x' segons en executarse
+                // hide = amaga l'element seleccionat
+
+                $("#boto_amagar").click(function()
+                {
+
+                    $("#capa1").hide(1000);
+                    $("#capa2").delay(1000).hide(1000);
+                    $("#capa3").delay(2000).hide(1000); 
+
+                });
+
+                $("#boto_mostrar").click(function()
+                {
+
+                    $("#capa1").show(1000);
+                    $("#capa2").delay(1000).show(1000);
+                    $("#capa3").delay(2000).show(1000);
+
+                });
+
+                $("#boto_toggle").click(function()
+                {
+
+                    $("#capa1").toggle(1000);
+                    $("#capa2").delay(1000).toggle(1000);
+                    $("#capa3").delay(2000).toggle(1000);
+
+                });
+
+            });
+        
+        </script>
+    </body>
+</html>

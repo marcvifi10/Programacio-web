@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JQ2</title>
+        <meta charset="utf8">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <style>
+        
+            td
+            {
+
+                height: 45px;
+                font-size: 18px;
+
+            }
+        
+        </style>
+    </head>
+    <body>
+        <script>
+
+            var avui = new Date()
+            var mes = avui.getMonth();
+            var dia = avui.getDay();
+        
+            $(document).ready(function()
+            {
+
+                $("#datepicker").datepicker({ minDate: new Date(2019, avui.getMonth(), dia) });
+                $("#datepicker1").datepicker();
+
+            });
+            
+        </script>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <br><br>
+                    <form action="plantilla.php" method="post">
+                        <table id="taula1" width="80%" align="center">
+                            <tr>
+                                <td>
+                                    Nom:
+                                </td> 
+                                <td>
+                                    <input type="text" id="nom" name="nom" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Cognoms:
+                                </td> 
+                                <td>
+                                    <input type="text" id="cognom" name="cognom" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Titol:
+                                </td> 
+                                <td> 
+                                    <input type="text" id="titol" name="titol" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Titol cortesía: 
+                                </td>
+                                <td>
+                                    <input type="text" id="titol_cortesia" name="titol_cortesia" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Data de naixement: 
+                                </td>
+                                <td>
+                                    <input type="text" id="datepicker1" name="datepicker1" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Data de contractació: 
+                                </td>
+                                <td>
+                                    <input type="text" id="datepicker" name="datepicker" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Adreça:
+                                </td>
+                                <td> 
+                                    <input type="text" id="adreça" name="adreça" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Ciutat: 
+                                </td>
+                                <td>
+                                    <input type="text" id="ciutat" name="ciutat" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Regió:
+                                </td>
+                                <td> 
+                                    <input type="text" id="regio" name="regio" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Codi postal: 
+                                </td>
+                                <td>
+                                    <input type="text" id="codiPostal" name="codiPostal" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <input type="submit" value="ENVIAR">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                    <br><br>
+                </div> 
+            </div>
+        </div>
+    </body>
+</html>

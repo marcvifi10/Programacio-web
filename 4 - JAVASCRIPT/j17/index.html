@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>17</title>
+    </head>
+    <body>
+        <div>
+            <h1>Productes:</h1>
+            <a href="#" onclick="mostraObjecte(id);" id="prod1">Producte 1</a>
+            <a href="#" onclick="mostraObjecte(id);" id="prod2">Producte 2</a>
+            <a href="#" onclick="mostraObjecte(id);" id="prod3">Producte 3</a>
+        </div>
+        <div class="resultat">
+
+        </div>
+        <script>
+            function Producte(nomProd, refProd, descProd, preuProd, fotoProd) 
+            {
+                this.nom = nomProd;
+                this.ref = refProd;
+                this.desc = descProd;
+                this.preu = preuProd;
+                this.foto = fotoProd;
+            }
+
+            var Producte1 = new Producte('Lejia', '#ee45tr', 'Colores especiales', '12€', 'lejia.jpg');
+            var Producte2 = new Producte('Tomaquet', '#ee55tr', 'Tomate frito', '8€', 'tomate.jpg');
+            var Producte3 = new Producte('Llet', '#88rrty', 'Leche de almendras', '3€', 'llet.jpg');
+
+            var posicioR = document.getElementsByClassName('resultat')[0];
+            var cadena = "";
+            function mostraObjecte(id) {
+                cadena = "";
+                if (id == "prod1") {
+                    cadena += Producte1.nom + '<br>';
+                    cadena += Producte1.ref + '<br>';
+                    cadena += Producte1.desc + '<br>';
+                    cadena += Producte1.preu + '<br>';
+                    cadena += "<img src='" + Producte1.foto + "'><br>";              
+                    posicioR.innerHTML = cadena;
+                } else if (id == "prod2") {
+                    cadena += Producte2.nom + '<br>';
+                    cadena += Producte2.ref + '<br>';
+                    cadena += Producte2.desc + '<br>';
+                    cadena += Producte2.preu + '<br>';
+                    cadena += "<img src='" + Producte2.foto + "'><br>";               
+                    posicioR.innerHTML = cadena;
+                } else {
+                    cadena += Producte3.nom + '<br>';
+                    cadena += Producte3.ref + '<br>';
+                    cadena += Producte3.desc + '<br>';
+                    cadena += Producte3.preu + '<br>';
+                    cadena += "<img src='" + Producte3.foto + "'><br>";               
+                    posicioR.innerHTML = cadena;
+                }
+            }
+        </script>
+    </body>
+</html>

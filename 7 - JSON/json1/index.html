@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J12</title>
+        <meta charset="utf8">
+        <script src="../jquery-3.4.1.min.js"></script>
+        <style>
+        
+            #cont
+            {
+
+                width: 300px;
+                height: 200px;
+                background-color: aquamarine;
+                top: 100px;
+                left: 100px;
+
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="cont">
+            <p>NOM: </p>
+            <p id="nom"></p>
+            <p>PREU: </p>
+            <p id="preu"></p>
+            <input type="button" id="amagar" value="AMAGAR!">
+        </div>
+        <script>
+        
+            $(document).ready(function()
+            {
+
+                $.ajax({
+
+                    url:"document.json",
+                    method:"get",
+                    dataType:"json",
+                    success:function(data,status)
+                    {
+
+                        $("#nom").html(data.nom);
+
+                        $("#preu").html(data.preu);
+
+                    },
+                    error:function()
+                    {
+
+
+
+                    }
+
+                });
+
+            });
+        
+        </script>
+    </body>
+</html>

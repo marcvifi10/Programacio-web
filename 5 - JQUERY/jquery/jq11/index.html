@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JQ11</title>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    </head>
+    <style>
+
+        .destacat
+        {
+
+            color: red;
+
+        }
+
+    </style>
+    <body>
+        <ul>
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+        </ul>
+        <script src="../jquery-3.4.1.min.js"></script>
+        <script>
+
+            $(document).ready(function()
+            {
+
+                $("li").click(function()
+                {
+
+                    $("li").removeClass("destacat");
+                    $(this).addClass("destacat");
+
+                });
+
+            });
+            
+        </script>
+    </body>
+</html>

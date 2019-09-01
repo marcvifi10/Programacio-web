@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J8</title>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <script>
+
+            function enviar()
+            {
+                var provincia = document.getElementById("provincia");
+
+                // alert(provincia.value);
+
+                var enviament = document.getElementById("despeses");
+
+                enviament.innerHTML = "Enviament: " + provincia.value;
+
+            }
+
+        </script>
+        <div id="form">
+            <form name="form1">
+                <strong>PROVINCIA</strong> <br><br>
+                <select name="provincia" id="provincia">
+                    <option value="">TRIA UNA PROVINCIA</option>
+                    <option value="Girona">Girona</option>
+                    <option value="Barcelona">Barcelona</option>
+                    <option value="Tarragona">Tarragona</option>
+                    <option value="Lleida">Lleida</option>
+                    <input type="button" value="Enviar" onclick="enviar()">
+                </select>
+            </form>
+            <p id="despeses"></p>
+        </div>
+    </body>
+</html>

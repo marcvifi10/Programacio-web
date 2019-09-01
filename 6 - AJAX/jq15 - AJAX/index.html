@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>J13</title>
+        <link rel="stylesheet" type="text/css" href="estils.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+        <meta charset="utf8">
+        <style>
+        
+            body
+            {
+
+                background-color: aquamarine;
+
+            }
+
+            #contingut
+            {
+
+                background-color: red;
+                width: 200px;
+
+            }
+
+            #capa2
+            {
+
+
+
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="contingut">
+
+        </div><br>
+        <input type="button" id="btn" value="CLICK!!!">
+        <script src="../jquery-3.4.1.min.js"></script>
+        <script>
+        
+        $(function()
+        {
+            $("#btn").click(function()
+            {
+
+                // Carrèga tota la pàgina
+                // $("#contingut").load("dades.html");
+
+                // Carrèga la capa amb id 'desc' de la pàgina 
+                $("#contingut").load("dades.html", function(respostaTxt,statusTxt,XHR)
+                {
+
+                    if(statusTxt == "success")
+                    {
+
+                        alert("Tot OK!!!");
+                        alert(respostaTxt);
+
+                    }
+
+                    if(statusTxt == "error")
+                    {
+
+                        alert("ERROR!!!");
+                        alert(XHR.status);
+                        alert(XHR.statusText);
+
+                    }
+
+                });
+
+            });
+        });
+        
+        </script>
+    </body>
+</html>

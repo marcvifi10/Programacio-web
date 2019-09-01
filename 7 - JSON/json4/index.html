@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON4</title>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <div id="cos" align="center">
+
+        </div>
+        <script src="../jquery-3.4.1.min.js"></script>
+        <script>
+        
+           $(document).ready(function()
+           {
+
+            $.ajax({
+
+                url:"station_information.json",
+                method:"get",
+                dataType:"json",
+                success:function(data,status)
+                {
+
+                    // $("#nom").html(data.nom);
+                    // $("#preu").html(data.preu);
+
+                    // data.products = selecciones l'objecte data i l'array products
+
+                    var taula = "<table border='1' style='width:50%; align-content: center;'>";
+                    taula += "<tr align='center'>";
+                    taula += "<td style='align-content: center;'>Adreça</td>";
+                    taula += "<td>Lat - Long</td>";
+                    taula += "<td>Capacitat</td>";
+                    taula += "</tr>";
+
+                    $.each(data.data.stations,function(i,item)
+                    {
+
+                        taula += "<tr align='justify'><td>";
+                        taula += item.name;
+                        taula += "</td>";
+                        taula += "<td><a target='_blank' href='https://www.google.es/maps/place/'" + item.lat + "," + item.lon + ">";
+                        taula += item.lat + " ";
+                        taula += item.lon;
+                        taula += "</td>";
+                        taula += "<td>";
+                        taula += item.capacity;
+                        taula += "</td></tr>";
+
+                    });
+
+                    taula += "</table>";
+
+                    $("#cos").html(taula);
+
+                },
+                error:function()
+                {
+
+
+
+                }
+
+                });
+
+            });
+        
+        </script>
+    </body>
+</html>

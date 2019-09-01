@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JQ2</title>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <script src="../jquery-3.4.1.min.js"></script>
+        <ul>
+            <li id="a"><strong>A</strong></li>
+            <li>B</li>
+            <li>C</li>
+        </ul>
+        <script>
+        
+            $(document).ready(function()
+            {
+
+                var destacat = $("#a");
+
+                // Mostra el text
+                alert(destacat.text());
+
+                // Mostra el text amb etiquetes html
+                alert(destacat.html());
+
+                alert(destacat.val());
+
+            });
+        
+        </script>
+    </body>
+</html>

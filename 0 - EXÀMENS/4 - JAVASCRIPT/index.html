@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exàmen JavaScript</title>
+        <meta charset="utf8">
+        <script>
+            
+            var i = 0;
+            var increment = 1;
+        
+        </script>
+    </head>
+    <body>
+        <script>
+        
+           var taula = "<table border='1' width='50%' align='center'>"; 
+
+           taula += "<tr>";
+           taula += "<th>Euro</th>";
+           taula += "<th>Dolar $</th>";
+           taula += "<th>Yen</th>";
+           taula += "<th>Lliura</th>";
+           taula += "</tr>";
+
+            while(i <= 100)
+            {
+
+                i++;
+
+                if(i < 10)
+                {
+
+                    taula += "<tr>";
+                    taula += "<td>" + i + "</td>";
+                    taula += "<td>" + Math.round((i*1.12)*100)/100 + " $</td>";
+                    taula += "<td>" + Math.round((i*122)*100)/100 + "</td>";
+                    taula += "<td>" + Math.round((i*0.90)*100)/100 + "</td>";
+                    taula += "</tr>";
+
+                }
+
+                else if(i == 10 || i == 15 || i == 20 || i == 25)
+                {
+
+                    taula += "<tr>";
+                    taula += "<td>" + i + "</td>";
+                    taula += "<td>" + Math.round((i*1.12)*100)/100 + " $</td>";
+                    taula += "<td>" + Math.round((i*122)*100)/100 + "</td>";
+                    taula += "<td>" + Math.round((i*0.90)*100)/100 + "</td>";
+                    taula += "</tr>";
+
+                }
+
+                else if(i == 50 || i == 100)
+                {
+
+                    taula += "<tr>";
+                    taula += "<td>" + i + "</td>";
+                    taula += "<td>" + Math.round((i*1.12)*100)/100 + " $</td>";
+                    taula += "<td>" + Math.round((i*122)*100)/100 + "</td>";
+                    taula += "<td>" + Math.round((i*0.9)*100)/100 + "</td>";
+                    taula += "</tr>";
+
+                }
+
+            }
+
+           taula += "</table>";
+
+           document.write(taula)
+        
+        </script>
+    </body>
+</html>

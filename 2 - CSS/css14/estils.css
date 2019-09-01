@@ -1,0 +1,21 @@
+#capa1
+{
+
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    
+    /* transition: 0.5s; */
+    transition: background-color 2s, width 2s ease 2s;
+    background-color: red;
+
+
+}
+
+#capa1:hover
+{
+
+    width: 500px;
+    background-color: yellow;
+
+}

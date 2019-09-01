@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JQ5</title>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    </head>
+    <style>
+
+        #capa1
+        {
+
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 10px;
+            background-color: red;
+
+        }
+
+        #capa2
+        {
+
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 120px;
+            background-color: blue;
+
+        }
+
+        #capa3
+        {
+
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 230px;
+            background-color: green;
+
+        }
+
+        #bt1
+        {
+
+            margin-top: 50px;
+            margin-left: 500px;
+
+        }
+
+    </style>
+    <body>
+        <div id="capa1">
+
+        </div>
+        <div id="capa2">
+
+        </div>
+        <div id="capa3">
+
+        </div>
+        <div id="botons">
+            <input type="button" id="bt1" value="CLICk!!!">
+        </div>
+        <script src="../jquery-3.4.1.min.js"></script>
+        <script>
+
+            $(document).ready(function()
+            {
+
+                $("#bt1").click(function()
+                {
+
+                    $("#capa1").hide(1000);
+                    $("#capa1").show(1000);
+                    $("#capa1").animate({
+                        height: "+=300px"
+                    }, 1000);
+                    $("#bt1").animate({
+                        top: "+=500px"
+                    }, 1000);
+
+                    $("#capa2").fadeOut(1000);
+                    $("#capa2").fadeIn(1000);
+                    $("#capa2").animate({
+                        height: "+=300px",
+                        width: "300px",
+                    }, 1000);
+
+
+                    $("#capa3").fadeTo(1000,0.5);
+                    /* $("#capa3").slideUp(1000);
+                    $("#capa3").slideDown(1000); */
+                    /* $("#capa3").slideToggle(1000); */
+                    $("#capa3").toggle(1000);
+
+                });
+
+            });
+
+        </script>
+    </body>
+</html>

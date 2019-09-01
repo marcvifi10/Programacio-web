@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <form name="form1">
+            <h1>Calcula el transport:</h1>
+            <table border=1>
+                <tr>
+                    <td>
+                        <label for="desti">Desti:</label>
+                    </td>
+                    <td>
+                    <select name="desti" id="">
+                        <option value=""> -- Escull un destí --</option>
+                        <option value="0">Peninsula</option>
+                        <option value="1">Balears</option>
+                        <option value="2">Canaries</option>
+                        <option value="3">Estranger</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="transport">Transport:</label>
+                    </td>
+                    <td>
+                        <select name="transport" id="">
+                            <option value=""> -- Escull un transport --</option>
+                            <option value="0">CORREOS</option>
+                            <option value="1">SEUR</option>
+                            <option value="2">UPS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=3 id="total">Total:</td>
+                </tr>
+            </table>
+            <input type="button" value="Calcula" onclick="calculaCostos();">
+        </form>
+        <div id="taula_resultant">
+            
+        </div>
+        <script>
+            var correos = [4,8,12,15];
+            var seur = [5,9,15,20];
+            var ups = [9,9.5,11,25];
+            //creaTaula();
+
+            var inputDesti = document.forms['form1']['desti'];
+            var inputTransport = document.forms['form1']['transport'];;
+            function calculaCostos() {
+                var valorDesti = inputDesti.value;
+                var valorTransport = inputTransport.value;
+
+                switch (valorTransport) {
+                    case "0": 
+                        document.getElementById('total').innerHTML = 'Total: ' + correos[valorDesti] + '€';
+                        break;
+                    case "1": 
+                        document.getElementById('total').innerHTML = 'Total: ' + seur[valorDesti] + '€';
+                        break;
+                    case "2":
+                        document.getElementById('total').innerHTML = 'Total: ' + ups[valorDesti] + '€';
+                }
+            }
+            //falta desarrollar
+            function creaTaula() {
+                var taula = "";
+                taula += "<table border=1>";
+                taula += "<tr><td></td>";
+                for (let j = 0; j<transport.length; j++) {
+                    taula += "<td>"+ transport[j] +"</td>";
+                }
+                taula += "</tr>";
+                for (let i = 1; i<desti.length; i++) {
+                    taula += "<tr><td>" + desti[i] + "</td>";
+                    for (let j = 0; j<preuDesti[i].length; j++) {
+                        taula += "<td>" + preuDesti[i][j] + "</td>";
+                    }
+                    taula += "</tr>";
+                }
+                
+                taula+= "</table>";
+                document.getElementById('taula_resultant').innerHTML = taula;
+            }
+        </script>
+    </body>
+</html>

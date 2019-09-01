@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JQ7</title>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    </head>
+    <style>
+
+        body
+        {
+
+            background-color: aquamarine;
+
+        }
+
+        #block
+        {
+
+            height: 500px;
+            width: 500px;;
+
+        }
+
+        #capa1
+        {
+
+            position: absolute;
+            top: 200px;
+            margin-left: 10px;
+            width: 256px;
+            height: 256px;
+            background-position: top left;
+            background-image: url('galleta.png');
+            background-size: 512px 512px;
+
+        }
+
+        #capa2
+        {
+
+            position: absolute;
+            top: 200px;
+            margin-left: 130px;
+            width: 256px;
+            height: 256px;
+            background-position: top right;
+            background-image: url('galleta.png');
+            background-size: 512px 512px;
+
+        }
+
+        #capa3
+        {
+
+            position: absolute;
+            top: 200px;
+            margin-left: 260px;
+            width: 256px;
+            height: 256px;
+            background-position: bottom left;
+            background-image: url('galleta.png');
+            background-size: 512px 512px;
+
+        }
+
+        #capa4
+        {
+
+            position: absolute;
+            top: 200px;
+            margin-left: 390px;
+            width: 256px;
+            height: 256px;
+            background-position: bottom right;
+            background-image: url('galleta.png');
+            background-size: 512px 512px;
+
+        }
+
+    </style>
+    <body>
+        <div id="block">
+            <div id="capa1">
+
+            </div>
+            <div id="capa2">
+
+            </div>
+            <div id="capa3">
+
+            </div>
+            <div id="capa4">
+
+            </div>
+            <div id="botons">
+                <input type="button" id="bt1" value="CLICK!!!">
+            </div>
+        </div>
+        <script src="../jquery-3.4.1.min.js"></script>
+        <script>
+
+            $(document).ready(function()
+            {
+
+                $("#bt1").click(function()
+                {
+
+                    $("#capa1").animate({
+                        top: "380px",
+                        left: "30px"
+                    }, 500).animate({
+                        top: "350px" 
+                    },500).animate({
+                        top: "20px",
+                        left: "410px"
+                    }, 5000).animate({
+                        top: "380px",
+                        left: "410px"
+                    }, 5000).animate({
+                        top: "20px",
+                        left: "410px"
+                    }, 5000).animate({
+                        top: "400px",
+                        left: "10px"
+                    }, 5000).animate({
+                        top: "20px",
+                        left: "10px"
+                    }, 5000);
+
+                    $("#capa2").animate({
+                        top: "380px",
+                        left: "150px"
+                    }, 500).animate({
+                        top: "350px" 
+                    },500).animate({
+                        top: "20px",
+                        left: "410px"
+                    }, 5000).animate({
+                        top: "380px",
+                        left: "410px"
+                    }, 5000).animate({
+                        top: "20px",
+                        left: "410px"
+                    }, 5000).animate({
+                        top: "400px",
+                        left: "10px"
+                    }, 5000).animate({
+                        top: "20px",
+                        left: "145px"
+                    }, 5000);
+
+                    $("#capa3").animate({
+                        top: "380px",
+                        left: "280px"
+                    }, 500).animate({
+                        top: "350px" 
+                    },500).animate({
+                        top: "380px",
+                        left: "300px"
+                    }, 500).animate({
+                        top: "20px",
+                        left: "410px"
+                    }, 5000).animate({
+                        top: "380px",
+                        left: "410px"
+                    }, 5000).animate({
+                        top: "20px",
+                        left: "410px"
+                    }, 5000).animate({
+                        top: "400px",
+                        left: "10px"
+                    }, 5000).animate({
+                        top: "274px",
+                        left: "10px"
+                    }, 5000);
+
+                    $("#capa4").animate({
+                        top: "380px",
+                        left: "410px"
+                    }, 500).animate({
+                        top: "350px"
+                    }, 500).animate({
+                        top: "380px",
+                        left: "450px"
+                    }, 500).animate({
+                        top: "20px",
+                        left: "410px"
+                    }, 5000).animate({
+                        top: "380px",
+                        left: "410px"
+                    }, 5000).animate({
+                        top: "20px",
+                        left: "410px"
+                    }, 5000).animate({
+                        top: "400px",
+                        left: "10px"
+                    }, 5000).animate({
+                        top: "286px",
+                        left: "156px"
+                    }, 5000);
+
+                });
+
+            });
+
+        </script>
+    </body>
+</html>

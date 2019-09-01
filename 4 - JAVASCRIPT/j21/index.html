@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>21</title>
+    </head>
+    <body>
+        <form action="" name="form1">
+            <label for="nom">Nom: </label>
+            <input class="exemple" type="text" name="nom" id="inputName">
+            <input type="button" value="Saludar" onclick="saludar();">
+        </form>
+        <script>
+
+            function saludar() 
+            {
+                var nom = document.getElementsByName('nom')[0];
+                var nom2 = document.getElementsByTagName('input')[0];
+                var nom3 = document.getElementById('inputName');
+                var nom4 = document.getElementsByClassName('exemple')[0];
+                
+                alert(nom.value);
+                alert(nom2.value);
+                alert(nom3.value);
+                alert(nom4.value);
+            }
+
+        </script>
+    </body>
+</html>

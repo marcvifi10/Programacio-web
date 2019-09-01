@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J4</title>
+    </head>
+    <body>
+        <script>
+
+            function EscriuNom(nom)
+            {
+
+                document.write("Hola " + nom + "<br>");
+
+            }
+
+            function Sumar(num1,num2)
+            {
+
+                var resultat = num1 + num2;
+
+                return resultat;
+
+                // document.write("Resultat: " + (num1 + num2));
+
+            }
+
+            function Sumar2(num1,num2)
+            {
+
+                var resultat = num1 + num2;
+
+                alert(resultat);
+
+            }
+
+            EscriuNom("Marc");
+            EscriuNom("Alex");
+
+            var total = Sumar(2,2);
+            document.write(total);
+
+        </script>
+        <br><br>
+        <input type="button" value="Suma" onclick="Sumar2(2,2)">
+    </body>
+</html>

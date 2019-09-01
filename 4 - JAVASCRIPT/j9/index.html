@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J9</title>
+        <meta charset="utf8">
+        <link rel="stylesheet" type="text/css" href="estils.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    </head>
+    <body>
+        <script>
+
+            /* function motrarGat()
+            {
+
+                var imatge = document.getElementById("imatge");
+
+                imatge.src="gato.jpg";
+
+                return false;
+
+            }
+
+            function motrarGos()
+            {
+
+                var imatge = document.getElementById("imatge");
+
+                imatge.src="perro.jpg";
+
+                return false;
+
+            }
+
+            function motrarCavall()
+            {
+
+                var imatge = document.getElementById("imatge");
+
+                imatge.src="caballo.jpg";
+
+                return false;
+
+            } */
+
+            function mostrarImatge(arxiu)
+            {
+
+                var imatge = document.getElementById("imatge");
+
+                imatge.src = arxiu;
+
+                return false;
+
+            }
+
+        </script>
+        <br><br>
+        <div class="container">
+            <div class="row">
+                <div id="links" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" align="center">
+                    <a href="#" onclick="mostrarImatge('gato.jpg')">GAT</a>
+                    <a href="#" onclick="mostrarImatge('perro.jpg')">GOS</a>
+                    <a href="#" onclick="mostrarImatge('caballo.jpg')">CAVALL</a>
+                </div>
+                <br><br>
+            </div>
+            <div class="row">
+                <div id="imatges" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" align="center">
+                    <img src="blanco.png" width="50%" height="50%" id="imatge">
+                </div>
+            </div>
+        </div>
+        <br>
+    </body>
+</html>
